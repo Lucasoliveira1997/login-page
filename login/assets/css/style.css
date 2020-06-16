@@ -20,6 +20,11 @@ h1 {
     margin: 0;
 }
 
+h3 {
+    font-weight: 500;
+    margin: 0;
+}
+
 p {
     font-size: 14px;
     font-weight: 100;
@@ -126,6 +131,7 @@ button.ghost {
 }
 
 .sign-up-container {
+    position: relative;
     left: 0;
     width: 50%;
     opacity: 0;
@@ -210,11 +216,55 @@ button.ghost {
 
 
 
-.form-pages {
+/* .form-pages {
     display: flex;
 }
 
 .form-page input {
     width: auto;
     margin: 10px 20px;
+} */
+
+.form-pages {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    right: 0;
+    padding: 0 20px;
+}
+
+.form-page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;   
+    /* align-items: center; */
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    margin-right: 30px;
+}
+
+.form-page input {
+    margin-left: 350px;
+    width: 100%;
+}
+
+.form-pages h3 {
+    align-self: center;
+}
+
+.page-btns {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.page-btns button {
+    margin: 0 10px;
+}
+
+.form-page .progress-bar {
+    display: flex;
 }
