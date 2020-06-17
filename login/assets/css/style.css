@@ -49,7 +49,7 @@ a {
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
     width: 768px;
     max-width: 100%;
     min-height: 480px;
@@ -107,7 +107,7 @@ button:active {
     transform: scale(0.95);
 }
 
-button:focus {
+button:focus, input:focus {
     outline: none;
 }
 
@@ -267,4 +267,76 @@ button.ghost {
 
 .form-page .progress-bar {
     display: flex;
+    margin: 40px 0;
+    width: 100%;
+}
+
+.form-page .progress-bar .step {
+    position: relative;
+    text-align: center;
+    width: 100%;    
+}
+
+.progress-bar .step p {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #000000;    
+}
+
+.progress-bar .step .bullet {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    border: 1px solid #ddd;
+    display: inline-flex;
+    flex-direction: inherit;
+    border-radius: 50%;
+}
+
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after {
+    display: none;
+}
+
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 100%;
+    background: #ddd;
+    bottom: 11px;
+}
+
+.progress-bar .step .bullet:after {
+    background: #a8e063;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3 linear forwards;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.progress-bar .step span {
+    position: absolute;
+    left: 50%;
+    top: -5%;
+    transform: translateX(-50%);
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 25px;
+}
+
+.progress-bar .step .check {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    font-size: 15px;
+    transform: translate(-50%, -50%);
+    display: none;
 }
